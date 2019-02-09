@@ -1,15 +1,11 @@
-# kaaa_app
+# King's Academy Alumni Application
 
-A new Flutter application.
+This is an application that is used to help the alumni of King's Academy connect with each other.
 
-## Getting Started
+# Stack
 
-This project is a starting point for a Flutter application.
+This app is developed using the Flutter framework with the SQFLite plugin as the backend.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
 
 For help getting started with Flutter, view our 
 [online documentation](https://flutter.io/docs), which offers tutorials, 
