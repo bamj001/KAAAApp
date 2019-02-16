@@ -51,7 +51,7 @@ class AlumniDatabaseHelper {
   void _createDb(Database db, int newVersion) async {
 
     await db.execute('CREATE TABLE $alumniTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, $colName TEXT, '
-        '$colEmail TEXT, $colKingsGraduatingClass TEXT, $colSecondaryEmail TEXT, $colCurrentCity TEXT, '
+        '$colEmail TEXT, $colKingsGraduatingClass INTEGER, $colSecondaryEmail TEXT, $colCurrentCity TEXT, '
         '$colCurrentCountry TEXT, $colMajor TEXT, $colCollege TEXT)');
   }
 

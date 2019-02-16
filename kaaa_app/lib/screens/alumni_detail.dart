@@ -156,6 +156,26 @@ class AlumniDetailState extends State<AlumniDetail> {
                 Padding(
                   padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: TextField(
+                    controller: currentCityController,
+                    style: textStyle,
+                    onChanged: (value) {
+                      debugPrint('Something changed in current city Text Field');
+                      updateCurrentCity();
+                    },
+                    decoration: InputDecoration(
+                        labelText: 'Current City',
+                        labelStyle: textStyle,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5.0)
+                        )
+                    ),
+                  ),
+                ),
+
+                // Seventh Element
+                Padding(
+                  padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                  child: TextField(
                     controller: majorController,
                     style: textStyle,
                     onChanged: (value) {
@@ -172,7 +192,7 @@ class AlumniDetailState extends State<AlumniDetail> {
                   ),
                 ),
 
-                // Seventh Element
+                // Eighth Element
                 Padding(
                   padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: TextField(
@@ -192,7 +212,7 @@ class AlumniDetailState extends State<AlumniDetail> {
                   ),
                 ),
 
-                // Eighth Element
+                // Ninth Element
                 Padding(
                   padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: Row(
@@ -266,6 +286,11 @@ class AlumniDetailState extends State<AlumniDetail> {
   // Update the current country of alumni object
   void updateCurrentCountry() {
     alumni.currentCountry = currentCountryController.text;
+  }
+
+  // Update the current city of alumni object
+  void updateCurrentCity() {
+    alumni.currentCity = currentCityController.text;
   }
 
   // Update the major of alumni object
