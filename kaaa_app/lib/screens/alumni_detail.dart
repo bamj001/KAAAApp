@@ -25,7 +25,10 @@ class AlumniDetailState extends State<AlumniDetail> {
   String appBarTitle;
   Alumni alumni;
 
+  int kingsGraduatingClass;
+
   TextEditingController nameController = TextEditingController();
+  TextEditingController kingsGraduatingClassController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController secondaryEmailController = TextEditingController();
   TextEditingController currentCityController = TextEditingController();
@@ -47,6 +50,8 @@ class AlumniDetailState extends State<AlumniDetail> {
     currentCountryController.text = alumni.currentCountry;
     majorController.text = alumni.major;
     collegeController.text = alumni.college;
+    kingsGraduatingClass = int.tryParse(kingsGraduatingClassController.text);
+    kingsGraduatingClass = alumni.kingsGraduatingClass;
 
     return WillPopScope(
 
@@ -89,6 +94,26 @@ class AlumniDetailState extends State<AlumniDetail> {
                             borderRadius: BorderRadius.circular(5.0)
                         )
                     ),
+                  ),
+                ),
+
+                // Second Element
+                Padding(
+                  padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                  child: TextField(
+                      controller: kingsGraduatingClassController,
+                      onChanged: (value) {
+                        debugPrint('Something changed in kings graduating class Field');
+                        updateKingsGraduatingClass();
+                      },
+                      decoration: InputDecoration(
+                          labelText: "King's Graduating Class",
+                          labelStyle: textStyle,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0)
+                          )
+                      ),
+                      keyboardType: TextInputType.number
                   ),
                 ),
 
@@ -271,6 +296,11 @@ class AlumniDetailState extends State<AlumniDetail> {
   // Update the name of Alumni object
   void updateName(){
     alumni.name = nameController.text;
+  }
+
+  //Update the graduating class from Kings
+  void updateKingsGraduatingClass() {
+    alumni.kingsGraduatingClass = int.tryParse(kingsGraduatingClassController.text);
   }
 
   // Update the email of alumni object

@@ -40,7 +40,7 @@ class AlumniListState extends State<AlumniList> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           debugPrint('FAB clicked');
-          navigateToDetail(Alumni('',2010, '','','','',''), 'Add Alumni');
+          navigateToDetail(Alumni('',0, '','','','',''), 'Add Alumni');
         },
 
         tooltip: 'Add Alumni',
