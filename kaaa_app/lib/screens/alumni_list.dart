@@ -120,8 +120,8 @@ class AlumniListState extends State<AlumniList> {
       Future<List<Alumni>> AlumniListFuture = databaseHelper.getAlumniList();
       AlumniListFuture.then((AlumniList) {
         setState(() {
-          this.alumniList = alumniList;
-          this.count = alumniList.length;
+          this.alumniList = AlumniList;
+          this.count = AlumniList.length;
         });
       });
     });
