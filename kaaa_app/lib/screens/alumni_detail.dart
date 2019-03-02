@@ -50,8 +50,7 @@ class AlumniDetailState extends State<AlumniDetail> {
     currentCountryController.text = alumni.currentCountry;
     majorController.text = alumni.major;
     collegeController.text = alumni.college;
-    kingsGraduatingClass = int.tryParse(kingsGraduatingClassController.text);
-    kingsGraduatingClass = alumni.kingsGraduatingClass;
+    kingsGraduatingClassController.text = alumni.kingsGraduatingClass.toString();
 
     return WillPopScope(
 
